@@ -8,8 +8,6 @@ on <a href="https://ngelrojasp.com"> my website</a> you will find a tutorials an
 
 ### Flask
 
-## Tutorials about rust
-
 ## Tutorials about c
 
 ### C and C++
