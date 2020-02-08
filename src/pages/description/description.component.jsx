@@ -38,7 +38,6 @@ class DescripComponent extends React.Component {
       .fetch(PATH + 'api/categories/related/ ' + id_art)
       .then(resp => resp.json())
       .then(response => {
-        console.log(response.data)
         this.setState({
           data_related: response.data,
         })
