@@ -117,7 +117,7 @@ class AboutMe extends React.Component {
               </div>
             </div>
             <div className="aboutme__words">
-              <h1 className="title">Hi, how is it going on...! ;)</h1>
+              <h1 className="title">Hi, how it's going...! ;)</h1>
               <h1 className="content">
                 I'm Software Architect, passionate for the new programming
                 languages and new technologies, one of my big qualities is to be
