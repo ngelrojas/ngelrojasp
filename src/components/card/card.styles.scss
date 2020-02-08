@@ -1,0 +1,50 @@
+$laptop-mid: 1152px;
+
+.topic-card {
+  width: 400px;
+  height: 190px;
+  padding: 1%;
+  background: #fff;
+  transform: translateZ(0);
+  transition: transform 0.25s ease-out;
+  float: left;
+  margin: 1%;
+  border: 1px solid #e4e4e4;
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 1px 2px 8px 1px #797877;
+  }
+  @media only screen and(max-width: $laptop-mid) {
+    width: 390px;
+  }
+  .card-header {
+    padding: 1%;
+    text-align: center;
+    margin-bottom: 5%;
+    letter-spacing: 10px;
+    a {
+      text-decoration: none;
+      color: #4181b2;
+    }
+  }
+  .card-body {
+    text-align: justify;
+    padding: 1%;
+    line-height: 19px;
+    a {
+      color: #595959;
+      text-decoration: none;
+    }
+  }
+  .qty_posts {
+    padding: 4%;
+    text-align: right;
+    a {
+      color: #fff;
+      text-align: left;
+      background: #595959;
+      border-radius: 50%;
+      padding: 1%;
+    }
+  }
+}

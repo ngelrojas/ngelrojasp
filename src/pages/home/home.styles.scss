@@ -1,0 +1,14 @@
+$tablet: 768px;
+
+.home-page{
+    h1{
+        font-size: 1.5rem;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        text-align: center;
+        color: #A91B28;
+        @media only screen and (max-width: $tablet){
+            margin-top: 20%; 
+        }
+    }
+}

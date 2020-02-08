@@ -1,0 +1,109 @@
+$tablet: 768px;
+
+.wrap-art {
+  transform: translateZ(0);
+  transition: transform 0.25s ease-out;
+  width: 93%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  background-color: #ffffff;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 1.5%;
+  padding-right: 0.5%;
+  border: 1px solid #e4e4e4;
+  justify-self: center;
+  line-height: 19px;
+  @media only screen and (max-width: $tablet) {
+    justify-self: center;
+    padding-right: 1.5%;
+  }
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 1px 2px 8px 1px #797877;
+  }
+  .wrapper-art-item {
+    .art-item-head {
+      width: 200px;
+      @media only screen and (max-width: $tablet) {
+        width: 175px;
+      }
+      float: left;
+      height: 97px;
+      margin-top: 2%;
+      h6 {
+        a {
+          text-decoration: none;
+          color: #a91b28;
+        }
+        font-size: 1.4rem;
+        text-align: left;
+        @media only screen and (max-width: $tablet) {
+          font-size: 2rem;
+        }
+      }
+      .art {
+        margin-bottom: 5px;
+      }
+      .art-item-author {
+        width: 200px;
+        @media only screen and (max-width: $tablet) {
+          width: 175px;
+        }
+        margin-top: 8%;
+        .author,
+        .data {
+          color: #595959;
+          font-size: 1.5rem;
+          .title-author {
+            float: left;
+            font-size: 1.3rem;
+          }
+          .content-author {
+            float: right;
+            margin-right: 8%;
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+    .art-item-excerpt {
+      width: 401px;
+      float: left;
+      margin-bottom: 4%;
+      margin-top: 2%;
+      text-align: justify;
+      p {
+        a {
+          color: #595959;
+          text-decoration: none;
+          font-size: 1.5rem;
+          @media only screen and (max-width: $tablet) {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+    .art-item-links {
+      width: 100%;
+      height: 33px;
+      overflow: hidden;
+      margin: 0 auto;
+      .list-links {
+        margin-left: 35%;
+        .links-item {
+          display: inline;
+          margin-right: 7%;
+          margin-left: 7%;
+          a {
+            .icon-link {
+              width: 25px;
+              height: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

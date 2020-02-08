@@ -1,0 +1,12 @@
+$tablet: 768px;
+
+.list-cards{
+   margin-top: 5%;
+   font-size: 1.5rem;
+   @media only screen and (max-width: $tablet){
+        margin:0 auto;
+        width: 73%;
+        padding-top: 10%;
+        overflow: hidden; 
+   }
+}
