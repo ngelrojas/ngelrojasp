@@ -2,6 +2,7 @@ import React from 'react'
 import {ListCards} from '../../components/list-cards/list-cards.component.jsx'
 import API from '../../config/config.jsx'
 import axios from 'axios'
+import Fade from 'react-reveal/Fade'
 import './news.styles.scss'
 
 class NewsComponent extends React.Component {
@@ -41,7 +42,9 @@ class NewsComponent extends React.Component {
     return (
       <main>
         <div className="topics">
-          <ListCards data_cat={data_cat} />
+          <Fade bottom>
+            <ListCards data_cat={data_cat} />
+          </Fade>
         </div>
       </main>
     )

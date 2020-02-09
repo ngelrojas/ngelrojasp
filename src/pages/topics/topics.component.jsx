@@ -1,9 +1,10 @@
-import React from "react"
-import {Helmet} from "react-helmet"
-import {ListCards} from "../../components/list-cards/list-cards.component.jsx"
-import API from "../../config/config.jsx"
-import axios from "axios"
-import "./topics.styles.scss"
+import React from 'react'
+import {Helmet} from 'react-helmet'
+import {ListCards} from '../../components/list-cards/list-cards.component.jsx'
+import API from '../../config/config.jsx'
+import axios from 'axios'
+import Fade from 'react-reveal/Fade'
+import './topics.styles.scss'
 
 class TopicsComponent extends React.Component {
   constructor() {
@@ -81,7 +82,9 @@ class TopicsComponent extends React.Component {
         </Helmet>
         <main>
           <div className="topics">
-            <ListCards data_cat={data_cat} />
+            <Fade bottom>
+              <ListCards data_cat={data_cat} />
+            </Fade>
           </div>
         </main>
       </React.Fragment>

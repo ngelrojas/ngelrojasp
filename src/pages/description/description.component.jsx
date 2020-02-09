@@ -2,6 +2,7 @@ import React from 'react'
 import {Helmet} from 'react-helmet'
 import {RelatedCategory} from '../../components/related-category/related-category.component.jsx'
 import './description.styles.scss'
+import Fade from 'react-reveal/Fade'
 import PATH from '../../config/config.jsx'
 
 class DescripComponent extends React.Component {
@@ -127,39 +128,41 @@ class DescripComponent extends React.Component {
         </Helmet>
         <main>
           <div className="content-desc">
-            <div className="content-desc-left">
-              <div className="content-desc__head">
-                <figure className="head__img">
-                  <img
-                    src={`${PATH +
-                      'api/storage/blog-images/articles/' +
-                      this.state.data_post.art_img_excerpt}`}
-                    alt={`${this.state.data_post.art_title_slug} - ${this.state.data_post.full_name}`}
-                  />
-                </figure>
+            <Fade>
+              <div className="content-desc-left">
+                <div className="content-desc__head">
+                  <figure className="head__img">
+                    <img
+                      src={`${PATH +
+                        'api/storage/blog-images/articles/' +
+                        this.state.data_post.art_img_excerpt}`}
+                      alt={`${this.state.data_post.art_title_slug} - ${this.state.data_post.full_name}`}
+                    />
+                  </figure>
 
-                <h1>{this.state.data_post.art_title}</h1>
-                <div className="head__author">
-                  <div className="author">
-                    <span>author: </span>
-                    {this.state.data_post.full_name}
-                  </div>
-                  <div className="data">
-                    <span>Data: </span>
-                    {this.state.data_post.created_at}
+                  <h1>{this.state.data_post.art_title}</h1>
+                  <div className="head__author">
+                    <div className="author">
+                      <span>author: </span>
+                      {this.state.data_post.full_name}
+                    </div>
+                    <div className="data">
+                      <span>Data: </span>
+                      {this.state.data_post.created_at}
+                    </div>
                   </div>
                 </div>
+                <div className="content-desc__body">
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: this.state.data_post.art_description,
+                    }}></div>
+                </div>
               </div>
-              <div className="content-desc__body">
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: this.state.data_post.art_description,
-                  }}></div>
+              <div className="content-desc-right">
+                <RelatedCategory data_related={data_related} />
               </div>
-            </div>
-            <div className="content-desc-right">
-              <RelatedCategory data_related={data_related} />
-            </div>
+            </Fade>
           </div>
         </main>
       </React.Fragment>

@@ -2,6 +2,7 @@ import React from 'react'
 import {Helmet} from 'react-helmet'
 import API from '../../config/config.jsx'
 import {ListArticles} from '../../components/list-articles/list-articles.component.jsx'
+import Fade from 'react-reveal/Fade'
 import './sub-topics.styles.scss'
 
 class SubTopics extends React.Component {
@@ -96,7 +97,9 @@ class SubTopics extends React.Component {
         </Helmet>
         <main>
           <div className="sub-topics">
-            <ListArticles data_post={data_post} />
+            <Fade bottom>
+              <ListArticles data_post={data_post} />
+            </Fade>
           </div>
         </main>
       </React.Fragment>

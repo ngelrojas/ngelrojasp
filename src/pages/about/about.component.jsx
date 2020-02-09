@@ -6,6 +6,7 @@ import GitHubComponent from './assets/github.component.jsx'
 import LinkedInComponent from './assets/linkedin.component.jsx'
 import TwitterComponent from './assets/twitter.component.jsx'
 import FComponent from './assets/f.component.jsx'
+import Fade from 'react-reveal/Fade'
 import './about.styles.scss'
 
 class AboutMe extends React.Component {
@@ -59,71 +60,76 @@ class AboutMe extends React.Component {
         </Helmet>
         <main>
           <div className="aboutme">
-            <div className="aboutme__card">
-              <div className="aboutme__me">
-                <figure>
-                  {Photo ? (
-                    <img src={Photo} alt="Ngel Rojas" />
-                  ) : (
-                    <p>LOADING</p>
-                  )}
-                </figure>
-              </div>
-              <div className="aboutme__content">
-                <div className="name">
-                  <h1>Angel Rojas P.</h1>
-                  <h1 className="title">Software Architect</h1>
+            <Fade>
+              <div className="aboutme__card">
+                <div className="aboutme__me">
+                  <figure>
+                    {Photo ? (
+                      <img src={Photo} alt="Ngel Rojas" />
+                    ) : (
+                      <p>LOADING</p>
+                    )}
+                  </figure>
                 </div>
-                <div className="emails">
-                  <h1 className="one">me@ngelrojasp.com</h1>
-                  <h1 className="two">aomarrojasp@gmail.com</h1>
+                <div className="aboutme__content">
+                  <div className="name">
+                    <h1>Angel Rojas P.</h1>
+                    <h1 className="title">Software Architect</h1>
+                  </div>
+                  <div className="emails">
+                    <h1 className="one">me@ngelrojasp.com</h1>
+                    <h1 className="two">aomarrojasp@gmail.com</h1>
+                  </div>
+                </div>
+                <div className="aboutme__share">
+                  <ul>
+                    <li>
+                      <a
+                        href={this.state.links[0]}
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        <GitHubComponent className="social-icons" />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href={this.state.links[1]}
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        <LinkedInComponent className="social-icons" />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href={this.state.links[2]}
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        <TwitterComponent className="social-icons" />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href={this.state.links[3]}
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        <FComponent className="social-icons" />
+                      </a>
+                    </li>
+                  </ul>
                 </div>
               </div>
-              <div className="aboutme__share">
-                <ul>
-                  <li>
-                    <a
-                      href={this.state.links[0]}
-                      target="_blank"
-                      rel="noopener noreferrer">
-                      <GitHubComponent className="social-icons" />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href={this.state.links[1]}
-                      target="_blank"
-                      rel="noopener noreferrer">
-                      <LinkedInComponent className="social-icons" />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href={this.state.links[2]}
-                      target="_blank"
-                      rel="noopener noreferrer">
-                      <TwitterComponent className="social-icons" />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href={this.state.links[3]}
-                      target="_blank"
-                      rel="noopener noreferrer">
-                      <FComponent className="social-icons" />
-                    </a>
-                  </li>
-                </ul>
+            </Fade>
+            <Fade>
+              <div className="aboutme__words">
+                <h1 className="title">Hi, how it's going...! ;)</h1>
+                <h1 className="content">
+                  I'm Software Architect, passionate for the new programming
+                  languages and new technologies, one of my big qualities is to
+                  be self-taught, and an eternal learner.
+                </h1>
               </div>
-            </div>
-            <div className="aboutme__words">
-              <h1 className="title">Hi, how it's going...! ;)</h1>
-              <h1 className="content">
-                I'm Software Architect, passionate for the new programming
-                languages and new technologies, one of my big qualities is to be
-                self-taught, and an eternal learner.
-              </h1>
-            </div>
+            </Fade>
+
             <div className="aboutme__btn">
               <Link
                 to="/public/angel-rojas.pdf"
