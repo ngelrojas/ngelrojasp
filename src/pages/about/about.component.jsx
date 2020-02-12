@@ -23,41 +23,32 @@ class AboutMe extends React.Component {
   }
 
   render() {
+    const seo = {
+      title: '...::Ngel Rojas::...',
+      description:
+        'I am Software Architect, passionate for the new programming languages and new technologies, one of my big qualities is to be self-taught, and an eternal learner.',
+      url: 'https://ngelrojasp.com/about-me',
+      image: 'https://ngelrojasp.com/public/angel.png',
+    }
     return (
       <React.Fragment>
-        <Helmet>
-          <title>...::Ngel Rojas::...</title>
-          <meta
-            name="description"
-            content="I am Software Architect, passionate for the new programming
-                  languages and new technologies, one of my big qualities is to be self-taught, and an eternal learner."
-          />
-          <meta property="og:local" content="pt_BR" />
-          <meta property="og:type" content="website" />
-          <meta property="og:title" content="Ngel - Rojas" />
-          <link rel="canonical" href="https://ngelrojasp.com" />
-          <meta property="og:url" content="https://ngelrojasp.com/about-me" />
-          <meta property="og:site_name" content="Ngel - Rojas" />
-          <meta
-            property="og:image"
-            content="https://ngelrojasp.com/public/angel.png"
-          />
-          <meta property="og:image:type" content="image/png" />
-          <meta property="og:image:width" content="200" />
-          <meta property="og:image:height" content="200" />
-
-          <meta name="twitter:title" content="Ngel - Rojas" />
-          <meta
-            name="twitter:description"
-            content="I am Software Architect, passionate for the new programming
-                        languages and new technologies, one of my big qualities is to be self-taught, and an eternal learner."
-          />
-          <meta
-            name="twitter:image"
-            content="https://ngelrojasp.com/public/angel.png"
-          />
-          <meta name="twitter:card" content="200_200" />
-        </Helmet>
+        <Helmet
+          title={`${seo.title}`}
+          meta={[
+            {
+              name: 'description',
+              property: 'og:description',
+              content: seo.description,
+            },
+            {property: 'og:title', content: `${seo.title}`},
+            {property: 'og:url', content: seo.url},
+            {property: 'og:image', content: seo.image},
+            {property: 'og:image:type', content: 'image/png'},
+            {property: 'twitter:image:src', content: seo.image},
+            {property: 'twitter:title', content: `${seo.title}`},
+            {property: 'twitter:description', content: seo.description},
+          ]}
+        />
         <main>
           <div className="aboutme">
             <Fade>

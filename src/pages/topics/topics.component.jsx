@@ -40,46 +40,32 @@ class TopicsComponent extends React.Component {
       )
     }
     const {data_cat} = this.state
+    const seo = {
+      title: '...::Ngel Rojas::...',
+      description:
+        'All about technology of programming languages, data bases and machine learning.',
+      url: 'https://ngelrojasp.com/topics',
+      image: 'https://ngelrojasp.com/public/topics.png',
+    }
     return (
       <React.Fragment>
-        <Helmet>
-          <title>...::Ngel Rojas::...</title>
-          <meta property="og:local" content="pt_BR" />
-          <meta
-            name="description"
-            content="All about technology of programming languages, data bases and machine learning."
-          />
-          <meta property="og:type" content="article" />
-          <meta property="og:title" content="topics - categories" />
-          <meta property="og:url" content="https://ngelrojasp.com/topics" />
-          <meta
-            property="article:section"
-            content="All about technology of programming languages, data bases and machine learning."
-          />
-          <meta property="article:author" content="Ngel Rojas" />
-          <meta
-            property="article:tag"
-            content="python, django, postgresql, docker, rds-aws, javascript, cpp, c, rust, webassembly, mysql, react-js, machine-learning, git, gitlab"
-          />
-          <meta
-            property="og:image"
-            content="https://ngelrojasp.com/public/topics.png"
-          />
-          <meta property="og:image:type" content="image/png" />
-          <meta property="og:image:width" content="800" />
-          <meta property="og:image:height" content="400" />
-
-          <meta name="twitter:title" content="topics - categories" />
-          <meta
-            name="twitter:description"
-            content="All about technology of programming languages, data bases and machine learning."
-          />
-          <meta
-            name="twitter:image"
-            content="https://ngelrojasp.com/public/topics.png"
-          />
-          <meta name="twitter:card" content="800_400" />
-        </Helmet>
+        <Helmet
+          title={`${seo.title}`}
+          meta={[
+            {
+              name: 'description',
+              property: 'og:description',
+              content: seo.description,
+            },
+            {property: 'og:title', content: `${seo.title}`},
+            {property: 'og:url', content: seo.url},
+            {property: 'og:image', content: seo.image},
+            {property: 'og:image:type', content: 'image/png'},
+            {property: 'twitter:image:src', content: seo.image},
+            {property: 'twitter:title', content: `${seo.title}`},
+            {property: 'twitter:description', content: seo.description},
+          ]}
+        />
         <main>
           <div className="topics">
             <Fade bottom>

@@ -61,71 +61,34 @@ class DescripComponent extends React.Component {
       )
     }
     const {data_related} = this.state
+    const seo = {
+      title: this.state.data_post.art_title,
+      description: this.state.data_post.art_excerpt,
+      url: 'https://ngelrojasp.com/post/' + this.state.data_post.art_title_slug,
+      image:
+        PATH +
+        'api/storage/blog-images/articles/' +
+        this.state.data_post.art_img_excerpt,
+    }
     return (
       <React.Fragment>
-        <Helmet>
-          <title>Ngel Rojas | {`${this.state.data_post.art_title}`}</title>
-          <meta
-            name="description"
-            content={`${this.state.data_post.art_excerpt}`}
-          />
-          <meta property="og:local" content="pt_BR" />
-          <meta property="og:type" content="article" />
-          <meta
-            property="og:title"
-            content={`${this.state.data_post.art_title}`}
-          />
-          <meta
-            property="og:url"
-            content={`${'https://ngelrojasp.com/post/' +
-              this.state.data_post.art_title_slug}`}
-          />
-          <meta
-            property="og:description"
-            content={`${this.state.data_post.art_excerpt}`}
-          />
-          <meta
-            property="og:author"
-            content={`${this.state.data_post.full_name}`}
-          />
-          <meta
-            property="article:tag"
-            content="python, django, postgresql, docker, rds-aws"
-          />
-          <meta
-            property="article:published_time"
-            content={`${this.state.data_post.created_at}`}
-          />
-          <meta
-            property="og:image"
-            content={`${PATH +
-              'api/storage/blog-images/articles/' +
-              this.state.data_post.art_img_excerpt}`}
-          />
-          <meta property="og:image:type" content="image/png" />
-          <meta property="og:image:width" content="800" />
-          <meta property="og:image:height" content="400" />
-          <meta
-            property="og:site_name"
-            content={`${this.state.data_post.full_name} - Blog`}
-          />
-
-          <meta
-            name="twitter:title"
-            content={`${this.state.data_post.art_title}`}
-          />
-          <meta
-            name="twitter:description"
-            content={`${this.state.data_post.art_excerpt}`}
-          />
-          <meta
-            name="twitter:image"
-            content={`${PATH +
-              'api/storage/blog-images/articles/' +
-              this.state.data_post.art_img_excerpt}`}
-          />
-          <meta name="twitter:card" content="800_400" />
-        </Helmet>
+        <Helmet
+          title={`${seo.title}`}
+          meta={[
+            {
+              name: 'description',
+              property: 'og:description',
+              content: seo.description,
+            },
+            {property: 'og:title', content: `${seo.title}`},
+            {property: 'og:url', content: seo.url},
+            {property: 'og:image', content: seo.image},
+            {property: 'og:image:type', content: 'image/jpg'},
+            {property: 'twitter:image:src', content: seo.image},
+            {property: 'twitter:title', content: `${seo.title}`},
+            {property: 'twitter:description', content: seo.description},
+          ]}
+        />
         <main>
           <div className="content-desc">
             <Fade>

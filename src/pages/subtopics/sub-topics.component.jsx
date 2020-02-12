@@ -45,56 +45,31 @@ class SubTopics extends React.Component {
       )
     }
     const {data_post} = this.state
-
+    const seo = {
+      title: `Ngel Rojas | ${this.state.sub_topic}`,
+      description: `all about ${this.state.sub_topic}`,
+      url: `https://ngelrojasp.com/topic/${this.state.sub_topic}`,
+      image: `https://ngelrojasp.com/public/${this.state.sub_topic}.png`,
+    }
     return (
       <React.Fragment>
-        <Helmet>
-          <title>Ngel Rojas | {`${this.state.sub_topic}`}</title>
-          <meta property="og:local" content="pt_BR" />
-          <meta
-            name="description"
-            content={`all about ${this.state.sub_topic}`}
-          />
-          <meta property="og:type" content="article" />
-          <meta
-            property="og:title"
-            content={`sub-topic - sub-category - ${this.state.sub_topic}`}
-          />
-          <meta
-            property="og:url"
-            content={`https://ngelrojasp.com/topic/${this.state.sub_topic}`}
-          />
-          <meta
-            property="article:section"
-            content={`All about ${this.state.sub_topic}`}
-          />
-          <meta property="article:author" content="Ngel Rojas" />
-          <meta
-            property="article:tag"
-            content="python, django, postgresql, docker, rds-aws, javascript, cpp, c, rust, webassembly, mysql, react-js, machine-learning, git, gitlab"
-          />
-          <meta
-            property="og:image"
-            content={`https://ngelrojasp.com/public/${this.state.sub_topic}.png`}
-          />
-          <meta property="og:image:type" content="image/png" />
-          <meta property="og:image:width" content="800" />
-          <meta property="og:image:height" content="400" />
-
-          <meta
-            name="twitter:title"
-            content={`sub-topic - sub-category - ${this.state.sub_topic}`}
-          />
-          <meta
-            name="twitter:description"
-            content={`All about ${this.state.sub_topic}`}
-          />
-          <meta
-            name="twitter:image"
-            content={`https://ngelrojasp.com/public/${this.state.sub_topic}.png`}
-          />
-          <meta name="twitter:card" content="800_400" />
-        </Helmet>
+        <Helmet
+          title={`${seo.title}`}
+          meta={[
+            {
+              name: 'description',
+              property: 'og:description',
+              content: seo.description,
+            },
+            {property: 'og:title', content: `${seo.title}`},
+            {property: 'og:url', content: seo.url},
+            {property: 'og:image', content: seo.image},
+            {property: 'og:image:type', content: 'image/png'},
+            {property: 'twitter:image:src', content: seo.image},
+            {property: 'twitter:title', content: `${seo.title}`},
+            {property: 'twitter:description', content: seo.description},
+          ]}
+        />
         <main>
           <div className="sub-topics">
             <Fade bottom>
